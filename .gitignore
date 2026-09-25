@@ -1,0 +1,4 @@
+# Compiled and build artifacts
+*.tar.gz
+# Secrets
+.env
