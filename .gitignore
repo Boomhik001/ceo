@@ -1,25 +1,20 @@
-# Compiled and build artifacts
-*.tar.gz
-# Secrets
+# секреты — никогда в git
 .env
+client_secret.json
+state/yt_token.json
+state/yt_oauth_port.txt
 
-.env.*
-!.env.example
+# локальное состояние и логи планировщика
+state/
+logs/
 __pycache__/
 *.pyc
 
-# локальные секреты и рабочие данные автопостинга
-.env
-state/
+# видео во входящей очереди (сам каталог и queue.json остаются в репо)
 inbox/*.mp4
 inbox/*.mov
 inbox/*.webm
 inbox/*.mkv
-__pycache__/
-*.pyc
 
-logs/
-
-# прямая интеграция YouTube (Data API v3)
-client_secret.json
-state/yt_token.json
+# архив лицензии
+reels-autopost-v1.0.0.tar.gz
