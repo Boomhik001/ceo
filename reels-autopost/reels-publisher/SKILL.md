@@ -92,3 +92,26 @@ MCP-сервер — тогда публикация идёт нативными
 Авторизация — тем же API-ключом из `.env` (`UPLOAD_POST_API_KEY`), либо OAuth.
 Ссылка на репозиторий сервера: https://github.com/Upload-Post/upload-post-mcp
 Официальный Node.js SDK (не ключ, а библиотека): https://github.com/Upload-Post/upload-post-npm
+
+
+## YouTube-only mode (current setup, verified 2026-09-26)
+
+Connected social account in Upload-Post profile `default`: **YouTube only**
+(`@никитанавалов-и2ь`, `reauth_required: false`). Instagram and TikTok are NOT connected yet.
+
+Therefore always pass `--platforms youtube` until the user connects the others;
+otherwise the API returns a per-platform error for the missing accounts.
+
+Working command template (secrets come from `.env`, never inline them):
+
+```bash
+python3 reels-autopost/reels-publisher/scripts/publish_reel.py \
+  --video <local.mp4 or public https URL> \
+  --title "<caption>" \
+  --youtube-title "<short title, <=100 chars>" \
+  --youtube-description "<description>" \
+  --platforms youtube --wait
+```
+
+Notes for Shorts: vertical 9:16, <=3 min uploads as Shorts automatically;
+the API needs a reachable video — local files are uploaded by the script itself.
