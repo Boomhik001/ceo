@@ -19,3 +19,7 @@ __pycache__/
 *.pyc
 
 logs/
+
+# прямая интеграция YouTube (Data API v3)
+client_secret.json
+state/yt_token.json
