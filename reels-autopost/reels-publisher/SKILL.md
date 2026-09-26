@@ -74,3 +74,21 @@ curl -s "https://api.upload-post.com/api/uploadposts/users" -H "Authorization: A
 ## Аналитика (если спросит просмотры)
 
 GET `https://api.upload-post.com/api/uploadposts/analytics?platform=instagram` (и tiktok/youtube) с тем же заголовком — followers/impressions/reach; per-post метрики — по media_id.
+
+## Альтернатива: официальный MCP-сервер Upload-Post (рекомендуется для Claude)
+
+Вместо ручного вызова `scripts/publish_reel.py` можно подключить официальный
+MCP-сервер — тогда публикация идёт нативными инструментами агента, без скрипта:
+
+```jsonc
+// .mcp.json в корне проекта (или `claude mcp add upload-post --transport http --url ...`)
+{
+  "mcpServers": {
+    "upload-post": { "url": "https://mcp.upload-post.com/mcp" }
+  }
+}
+```
+
+Авторизация — тем же API-ключом из `.env` (`UPLOAD_POST_API_KEY`), либо OAuth.
+Ссылка на репозиторий сервера: https://github.com/Upload-Post/upload-post-mcp
+Официальный Node.js SDK (не ключ, а библиотека): https://github.com/Upload-Post/upload-post-npm
