@@ -1,0 +1,13 @@
+{
+  "platforms": ["youtube"],
+  "timezone": "Europe/Moscow",
+  "yt_privacy": "public",
+  "max_per_day": 3,
+  "min_gap_minutes": 180,
+  "dry_run": false,
+  "rules": [
+    {"weekday": [1, 2, 3, 4, 5], "time": "11:00"},
+    {"weekday": [1, 2, 3, 4, 5], "time": "18:30"},
+    {"weekday": [6, 0],          "time": "12:00"}
+  ]
+}

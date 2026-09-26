@@ -7,3 +7,13 @@
 !.env.example
 __pycache__/
 *.pyc
+
+# локальные секреты и рабочие данные автопостинга
+.env
+state/
+inbox/*.mp4
+inbox/*.mov
+inbox/*.webm
+inbox/*.mkv
+__pycache__/
+*.pyc
