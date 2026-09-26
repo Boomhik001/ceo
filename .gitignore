@@ -17,3 +17,5 @@ inbox/*.webm
 inbox/*.mkv
 __pycache__/
 *.pyc
+
+logs/
